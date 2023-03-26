@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqdbvebsi6p7a"]
+
+[ext_resource type="Script" path="res://lennart/lennart.gd" id="1_16nui"]
+[ext_resource type="Texture2D" uid="uid://dfmqyjnvs4at8" path="res://lennart/Lennart.png" id="2_c8yue"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbnv5"]
+size = Vector2(25, 26)
+
+[node name="Lennart" type="CharacterBody2D"]
+script = ExtResource("1_16nui")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_c8yue")
+vframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_kbnv5")

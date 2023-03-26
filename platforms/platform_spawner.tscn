@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://oq26jbymhvdb"]
+
+[ext_resource type="Script" path="res://platforms/platform_spawner.gd" id="1_ww54n"]
+
+[node name="LogSpawner" type="Node2D"]
+script = ExtResource("1_ww54n")
