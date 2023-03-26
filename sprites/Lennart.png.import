@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfmqyjnvs4at8"
-path="res://.godot/imported/Lennart.png-dab8437224040454b8eaa05e16ad4978.ctex"
+path="res://.godot/imported/Lennart.png-4480647a4af061b40c748755780c586e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://lennart/Lennart.png"
-dest_files=["res://.godot/imported/Lennart.png-dab8437224040454b8eaa05e16ad4978.ctex"]
+source_file="res://sprites/Lennart.png"
+dest_files=["res://.godot/imported/Lennart.png-4480647a4af061b40c748755780c586e.ctex"]
 
 [params]
 
