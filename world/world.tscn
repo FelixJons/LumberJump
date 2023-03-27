@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://d06n17t01dujb"]
+
+[ext_resource type="Script" path="res://world/world.gd" id="1_w1cgb"]
+[ext_resource type="PackedScene" uid="uid://bqa38wetdq4cp" path="res://platforms/platform.tscn" id="2_nshrn"]
+[ext_resource type="PackedScene" uid="uid://cpt42sbn1met8" path="res://camera/camera_2d.tscn" id="3_xps2t"]
+[ext_resource type="PackedScene" uid="uid://dq34n3mih83q7" path="res://lennart/lennart.tscn" id="4_8i4yl"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_w1cgb")
+platform_scene = ExtResource("2_nshrn")
+
+[node name="Camera2D" parent="." instance=ExtResource("3_xps2t")]
+position = Vector2(91, 159)
+player_path = NodePath("../Lennart")
+
+[node name="Lennart" parent="." instance=ExtResource("4_8i4yl")]
+position = Vector2(93, 203)

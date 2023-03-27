@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 const Speed = 100.0
-const JumpVelocity = -400
+const JUMP_VELOCITY = -400
+@onready var jump_height = 0.5 * JUMP_VELOCITY * JUMP_VELOCITY / gravity
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -13,15 +14,16 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
+		
 	# Handle Jump.
 	if is_on_floor():
-		velocity.y = JumpVelocity
-		emit_signal("player_jumped", JumpVelocity)
+		velocity.y = JUMP_VELOCITY
+		emit_signal("player_jumped", jump_height)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
+	
 	if direction:
 		velocity.x = direction * Speed
 	else:
@@ -29,19 +31,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-	# Print "hi" every time lennart has jumped 30 pixels
+	# Check if player is moving upwards
 	if velocity.y < 0:
-		travel_distance -= velocity.y * delta
-		print(travel_distance)
-	
-	if travel_distance > spawn_travel_distance_interval:
-		travel_distance = 0
-		print("Spawn log")
-		emit_signal("player_traveled_spawn_distance")
-		
-	
-	
-@onready var initial_y = position.y
-var spawn_travel_distance_interval = 80
-@onready var travel_distance = 0
+		pass
 
