@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bufj"]
 size = Vector2(32, 5)
 
-[node name="Log" type="CharacterBody2D" groups=["Logs"]]
+[node name="Log" type="StaticBody2D" groups=["Logs"]]
 script = ExtResource("1_psh1t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,3 +18,5 @@ position = Vector2(16, 2.5)
 scale = Vector2(0.999999, 1)
 shape = SubResource("RectangleShape2D_6bufj")
 one_way_collision = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
