@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://njnn4kgvpydj"]
+[gd_scene load_steps=4 format=3 uid="uid://bqa38wetdq4cp"]
 
 [ext_resource type="Script" path="res://platforms/platform.gd" id="1_psh1t"]
-[ext_resource type="Texture2D" uid="uid://be4ifg7w36un8" path="res://platforms/regular_log.png" id="2_ld5su"]
+[ext_resource type="Texture2D" uid="uid://be4ifg7w36un8" path="res://sprites/regular_log.png" id="2_xxg5s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bufj"]
 size = Vector2(32, 5)
@@ -10,11 +10,11 @@ size = Vector2(32, 5)
 script = ExtResource("1_psh1t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(16, 3)
-texture = ExtResource("2_ld5su")
+position = Vector2(16, 2.5)
+texture = ExtResource("2_xxg5s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16, 3)
+position = Vector2(16, 2.5)
 scale = Vector2(0.999999, 1)
 shape = SubResource("RectangleShape2D_6bufj")
 one_way_collision = true

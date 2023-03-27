@@ -7,6 +7,7 @@ const JumpVelocity = -400
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 signal player_jumped
+signal player_traveled_spawn_distance
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -27,3 +28,20 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, Speed)
 
 	move_and_slide()
+	
+	# Print "hi" every time lennart has jumped 30 pixels
+	if velocity.y < 0:
+		travel_distance -= velocity.y * delta
+		print(travel_distance)
+	
+	if travel_distance > spawn_travel_distance_interval:
+		travel_distance = 0
+		print("Spawn log")
+		emit_signal("player_traveled_spawn_distance")
+		
+	
+	
+@onready var initial_y = position.y
+var spawn_travel_distance_interval = 80
+@onready var travel_distance = 0
+

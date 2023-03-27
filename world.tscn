@@ -1,14 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://cag6cplv63ljx"]
 
-[ext_resource type="PackedScene" uid="uid://cqdbvebsi6p7a" path="res://lennart/lennart.tscn" id="1_x7ila"]
+[ext_resource type="PackedScene" uid="uid://dq34n3mih83q7" path="res://lennart/lennart.tscn" id="1_x7ila"]
 [ext_resource type="Script" path="res://world.gd" id="1_ypei1"]
-[ext_resource type="PackedScene" uid="uid://njnn4kgvpydj" path="res://platforms/platform.tscn" id="2_vowfd"]
+[ext_resource type="PackedScene" uid="uid://bqa38wetdq4cp" path="res://platforms/platform.tscn" id="2_vowfd"]
 [ext_resource type="PackedScene" uid="uid://oq26jbymhvdb" path="res://platforms/platform_spawner.tscn" id="4_odiud"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_ypei1")
-
-[node name="LogSpawner" parent="." instance=ExtResource("4_odiud")]
 log_scene = ExtResource("2_vowfd")
 
 [node name="Log" parent="." instance=ExtResource("2_vowfd")]
@@ -30,6 +28,8 @@ scale = Vector2(1.03721, 1.00619)
 [node name="Log5" parent="." instance=ExtResource("2_vowfd")]
 position = Vector2(74, 55)
 scale = Vector2(1.03721, 1.00619)
+
+[node name="LogSpawner" parent="." instance=ExtResource("4_odiud")]
 
 [node name="Lennart" parent="." instance=ExtResource("1_x7ila")]
 position = Vector2(91, 259)
