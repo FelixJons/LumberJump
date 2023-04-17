@@ -10,7 +10,6 @@ var _platform_sprite_size: Vector2
 @onready var _y_spawn_platform_position = VIEWPORT_SIZE.y - _platform_sprite_size.y
 @onready var random_number_generator = RandomNumberGenerator.new()
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_platform_sprite_size = get_platform_sprite_size()
 	random_number_generator.randomize()
@@ -32,10 +31,10 @@ func set_platform_spawn_collider(position: Vector2i) -> Vector2i:
 	var platform_spawn_collider = platform_spawn_collision_line_scene.instantiate()
 	var collision_shape_2d = platform_spawn_collider.get_node("CollisionShape2D")
 	var shape = collision_shape_2d.shape
-	shape.a = Vector2i(0,position.y)
+	shape.a = Vector2i(0, position.y)
 	shape.b = Vector2i(VIEWPORT_SIZE.x, position.y)
 	call_deferred("add_child", platform_spawn_collider)
-	platform_spawn_collider.body_entered.connect(self.spawn_platforms)
+	platform_spawn_collider.body_entered.connect(spawn_platforms)
 	return Vector2i(0,0)
 
 # Note to self! When you connect a native engine signal you need to make sure

@@ -44,7 +44,6 @@ func get_viewport_center_position() -> Vector2:
 	# This gets the overwritten window size values!
 	#print(viewport.get_visible_rect().size)
 
-
 	return viewport_center_position
 
 
