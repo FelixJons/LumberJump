@@ -7,6 +7,7 @@ const VIEWPORT_SIZE = Vector2i(180,320)
 @export var platform_spawn_collision_line_scene: PackedScene
 
 var _platform_sprite_size: Vector2
+
 @onready var _y_spawn_platform_position = VIEWPORT_SIZE.y - _platform_sprite_size.y
 @onready var random_number_generator = RandomNumberGenerator.new()
 
@@ -44,7 +45,6 @@ func spawn_platforms(_body):
 
 func spawn_platform(spawn_position) -> void:
 		var platform = platform_scene.instantiate()
-		# Research call_deferred()
 		call_deferred("add_child", platform)
 		platform.call_deferred("set", "position", Vector2(spawn_position))
 
@@ -54,7 +54,7 @@ func get_random_int(min_value, max_value) -> int:
 	return random_int
 	
 func get_platform_sprite_size() -> Vector2i:
-	var platform = platform_scene.instance()
+	var platform = platform_scene.instantiate()
 	var sprite_size = platform.get_node("Sprite2D").texture.get_size()
 	platform.queue_free()
 	return sprite_size
