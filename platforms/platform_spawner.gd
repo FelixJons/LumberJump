@@ -56,6 +56,5 @@ func get_random_int(min_value, max_value) -> int:
 func get_platform_sprite_size() -> Vector2i:
 	var platform = platform_scene.instantiate()
 	_platform_sprite_size = platform.get_node("Sprite2D").texture.get_size()
-	# Research difference between .free() and queue_free()
 	platform.queue_free()
 	return _platform_sprite_size
