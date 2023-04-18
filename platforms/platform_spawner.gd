@@ -1,6 +1,6 @@
 extends Node
 
-const NUMBER_OF_PLATFORMS: int = 20
+const NUMBER_OF_PLATFORMS: int = 200
 const VIEWPORT_SIZE = Vector2i(180,320)
 
 @export var platform_scene: PackedScene
@@ -16,7 +16,7 @@ func _ready() -> void:
 	generate_platforms(NUMBER_OF_PLATFORMS)
 
 func generate_platforms(number_of_platforms) -> void:
-	var platform_spawn_collider_index = number_of_platforms / 10
+	var platform_spawn_collider_index = number_of_platforms * (3.0/4.0)
 	
 	for i in range(number_of_platforms):
 		var x = get_random_int(0, VIEWPORT_SIZE.x - _platform_sprite_size.x)
@@ -54,7 +54,7 @@ func get_random_int(min_value, max_value) -> int:
 	return random_int
 	
 func get_platform_sprite_size() -> Vector2i:
-	var platform = platform_scene.instantiate()
-	_platform_sprite_size = platform.get_node("Sprite2D").texture.get_size()
+	var platform = platform_scene.instance()
+	var sprite_size = platform.get_node("Sprite2D").texture.get_size()
 	platform.queue_free()
-	return _platform_sprite_size
+	return sprite_size
