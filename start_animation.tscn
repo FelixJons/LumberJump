@@ -88,6 +88,33 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ef3v3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djbt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef3v3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djbt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef3v3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djbt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef3v3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djbt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef3v3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5hbi")
 }],
 "loop": true,
 "name": &"default",
@@ -104,8 +131,8 @@ size = Vector2(28, 26)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_8kmub")
-frame = 6
-frame_progress = 0.555119
+frame = 3
+frame_progress = 0.11889
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 visible = false
